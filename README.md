@@ -1,4 +1,4 @@
-# Hello world javascript action
+# Action Equals
 
 A dumb action that just check for two values to be equal (hotfix for the if issue with the matrix object).
 
