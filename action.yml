@@ -1,5 +1,8 @@
 name: 'Action Equals'
-description: 'Greet someone and record the time'
+description: 'A dumb action that just check for two values to be equal (hotfix for the if issue with the matrix object).'
+icon: 'activity'
+color: 'black'
+author: 'Thog'
 inputs:
   a:
     description: 'First input to compare'
