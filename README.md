@@ -22,11 +22,24 @@ The result of the equal operation
 ## Example usage
 
 ```yaml
-steps:
-- uses: Thog/action-equals@v1
-  with:
-    a: ${{ matrix.os }}
-    b: ubuntu-latest
-- name: Only ubuntu-latest
-  run: echo "This should only run on Ubuntu latest"
-```
+name: Test
+
+on: [push]
+
+jobs:
+  test:
+    name: Test matrix project
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macOS-latest, windows-latest]
+    steps:
+    - uses: Thog/action-equals@v1
+      id: isUbuntu
+      with:
+        a: ${{ matrix.os }}
+        b: ubuntu-latest
+    - name: Only ubuntu-latest
+      run: echo "This should only run on Ubuntu latest"
+      if: steps.isUbuntu.outputs.result
+````
