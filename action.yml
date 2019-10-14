@@ -1,0 +1,15 @@
+name: 'Action Equals'
+description: 'Greet someone and record the time'
+inputs:
+  a:
+    description: 'First input to compare'
+    required: true
+  b:
+    description: 'Second input to compare'
+    required: true
+outputs:
+  result:
+    description: 'The result of the equal operation'
+runs:
+  using: 'node12'
+  main: 'index.js'
