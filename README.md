@@ -12,6 +12,13 @@ A dumb action that just check for two values to be equal (hotfix for the if issu
 
 **Required** Second input to compare.
 
+### `result`
+
+**Not Required** If set to true or false, this result will rise error.
+
+### `message`
+
+**Not Required** Message which will be rised if error result getted.
 
 ## Outputs
 
