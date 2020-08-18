@@ -1,0 +1,101 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: [ master ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  test_eq:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - uses: InsonusK/action-equals
+        id: compare_test
+        with:
+          a: "aoeui"
+          b: "aoeui"
+      - name: "Check equal result"
+        run: |
+          if [[ "${{ steps.compare_test.outputs.result }}" != "true" ]];
+          then
+            echo "Drawft release doesn't equal project version"
+            exit 4
+          fi
+  test_not_eq:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - uses: InsonusK/action-equals
+        id: compare_test
+        with:
+          a: "aoeui"
+          b: "aoeuie"
+      - name: "Check equal result"
+        run: |
+          if [[ "${{ steps.compare_test.outputs.result }}" != "false" ]];
+          then
+            echo "Drawft release doesn't equal project version"
+            exit 4
+          fi
+  test_throw_error_of_true:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - uses: InsonusK/action-equals
+        id: compare_test
+        with:
+          a: "aoeui"
+          b: "aoeui"
+          error_result: "true"
+          error_message: "Get true which is error"
+  test_throw_error_of_false:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - uses: InsonusK/action-equals
+        id: compare_test
+        with:
+          a: "aoeui"
+          b: "aoeuie"
+          error_result: "false"
+          error_message: "Get false which is error"
+  test_not_throw_error_of_true:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - uses: InsonusK/action-equals
+        id: compare_test
+        with:
+          a: "aoeui"
+          b: "aoeuie"
+          error_result: "true"
+          error_message: "Get true which is error"
+  test_not_throw_error_of_false:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - uses: InsonusK/action-equals
+        id: compare_test
+        with:
+          a: "aoeui"
+          b: "aoeui"
+          error_result: "false"
+          error_message: "Get false which is error"
