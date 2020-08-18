@@ -1,5 +1,11 @@
 const core = require('@actions/core');
 
+function getResult(a, b){
+  let return_result = a === b ? "true" : "false";
+  core.setOutput("result", return_result);
+  return return_result;
+}
+
 try {
   const a = core.getInput('a');
   const b = core.getInput('b');
@@ -15,8 +21,3 @@ try {
   core.setFailed(error.message);
 }
 
-function getResult(a, b){
-  let return_result = a === b ? "true" : "false";
-  core.setOutput("result", return_result);
-  return return_result;
-}
