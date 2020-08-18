@@ -17,7 +17,7 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - uses: InsonusK/action-equals
+      - uses: .
         id: compare_test
         with:
           a: "aoeui"
@@ -35,7 +35,7 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - uses: InsonusK/action-equals
+      - uses: .
         id: compare_test
         with:
           a: "aoeui"
@@ -53,7 +53,7 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - uses: InsonusK/action-equals
+      - uses: .
         id: compare_test
         with:
           a: "aoeui"
@@ -66,7 +66,7 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - uses: InsonusK/action-equals
+      - uses: .
         id: compare_test
         with:
           a: "aoeui"
@@ -79,7 +79,7 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - uses: InsonusK/action-equals
+      - uses: .
         id: compare_test
         with:
           a: "aoeui"
@@ -92,7 +92,7 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - uses: InsonusK/action-equals
+      - uses: .
         id: compare_test
         with:
           a: "aoeui"
