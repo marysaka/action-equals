@@ -1,0 +1,36 @@
+name: Unit test which should throw error
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+   info:
+     runs-on: ubuntu-latest
+     steps:
+       - run: echo "Uncomment this tests to see errors"
+#  test_throw_error_of_true:
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#      - uses: actions/checkout@v1
+#      - uses: ./
+#        id: compare_test
+#        with:
+#          a: "aoeui"
+#          b: "aoeui"
+#          error_result: "true"
+#          error_message: "Get true which is error"
+#
+#  test_throw_error_of_false:
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#      - uses: actions/checkout@v1
+#      - uses: ./
+#        id: compare_test
+#        with:
+#          a: "aoeui"
+#          b: "aoeuie"
+#          error_result: "false"
+#          error_message: "Get false which is error"
