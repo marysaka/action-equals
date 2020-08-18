@@ -3,8 +3,8 @@ const core = require('@actions/core');
 try {
   const a = core.getInput('a');
   const b = core.getInput('b');
-  const error_result = core.getInput('b');
-  const error_message = core.getInput('b');
+  const error_result = core.getInput('error_result');
+  const error_message = core.getInput('error_message');
 
   let result = getResult(a, b);
   if (result === error_result){

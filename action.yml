@@ -10,10 +10,10 @@ inputs:
   b:
     description: 'Second input to compare'
     required: true
-  result:
+  error_result:
     description: 'If set to true or false, this result will rise error'
     required: false
-  message:
+  error_message:
     description: 'Message which will be rised if error result getted'
     required: false
     default: 'Values are not equal'
